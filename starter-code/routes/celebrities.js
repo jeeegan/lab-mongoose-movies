@@ -8,6 +8,7 @@ router.get('/', (req, res, next) => {
     .then(celebs => {
       res.render('celebrities/index', {celebs})
     })
+    .catch(e => console.log(`Error retreiving celebrities: ${e}`))
 });
 
 router.get('/new', (req, res, next) => {
@@ -59,7 +60,5 @@ router.get('/:id', (req, res, next) => {
       console.log(`Error finding celebrity: ${e}`)
     })
 });
-
-
 
 module.exports = router;
